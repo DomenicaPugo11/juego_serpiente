@@ -35,6 +35,15 @@
         ctx.stroke()
       }
     }
+
+    function pintarParte(lineaX, lineaY){
+      let x=lineaX*TAMANIO_CELDA
+      let y=lineaY*TAMANIO_CELDA
+      ctx.fillStyle = "pink";
+      ctx.fillRect(x,y,TAMANIO_CELDA,TAMANIO_CELDA);
+      ctx.strokeStyle="black";
+      ctx.strokeRect(x,y,TAMANIO_CELDA,TAMANIO_CELDA)
+    }
     // =========================
 
     function limpiarCanvas() {
@@ -44,6 +53,12 @@
     function dibujarTodo() {
       limpiarCanvas();
       dibujarTablero();
+      pintarParte(5,5)
+      pintarParte(10,2)
+      pintarParte(8,23)
+      pintarParte(23,10)
+      pintarParte(0,20)
+      pintarParte(23,23)
     }
 
 
