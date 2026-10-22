@@ -85,10 +85,10 @@
     }
 
     function dibujarTodo() {
-      limpiarCanvas();
-      dibujarTablero();
-      pintarSerpiente();
-      pintarComida();
+    limpiarCanvas();
+    dibujarTablero();
+    pintarSerpiente();
+    pintarParte(numAleatorioHorizontal, numAleatorioVertical, "red");
     }
     
     function moverDerecha(){
@@ -169,7 +169,7 @@
         cmp.innerText = acumulador;
         crecerSerpiente();
         pintarComida();
-        if (acumulador >= 5 && velocidad== 1000){
+        if (acumulador >=5){
             velocidad= 500;
             clearInterval(intervaloSerpiente);
             intervaloSerpiente = setInterval(moverSerpiente, velocidad);
@@ -180,7 +180,7 @@
 
 
     function iniciarJuego(){
-      if (gameOver==true){
+      if (juegoTerminado==true){
         return;
       }
       if (intervaloSerpiente!=null){
@@ -257,16 +257,16 @@
             y: serpienteInicial[i].y
         });
     }
-    acumulador = 0;
-    direccionActual = "derecha";
-    juegoTerminado = false;
-    velocidadSerpiente = 1000;
-    intervaloSerpiente = null;
+    acumulador=0;
+    direccionActual="derecha";
+    juegoTerminado=false;
+    velocidad=1000;
+    intervaloSerpiente=null;
     let cmp=document.getElementById("puntaje");
-    cmp.innerText = acumulador;
+    cmp.innerText=acumulador;
     pintarComida();
     dibujarTodo();
-    intervaloSerpiente = setInterval(moverSerpiente,velocidad);
+    intervaloSerpiente=setInterval(moverSerpiente,velocidad);
 }
 
 
